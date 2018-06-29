@@ -4,6 +4,7 @@
 import pandas as pd 
 import sys
 import pdb
+import glob
 
 varfil=sys.argv[1]
 f=open('2.xls','w')
@@ -12,7 +13,8 @@ f.write('name'+'\t'+'ID'+'\t'+'age'+'\t'+'B'+'\t'+'L'+'\t'+'yuejing'+'\t'+'docto
 'tai'+'\t'+'IVF'+'\t'+'shisanrisk'+'\t'+'shibarisk'+'\t'+'eryirisk'+'\n')
 df=pd.read_csv(varfil,header=0,sep='\t')
 df.to_csv('12.txt',index=False,header=True)
-x=4
+fil=glob.glob('../20180629/*.pdf')   # 更改文件目录
+x=len(fil)
 for i in range(x):
 	m=i+1
 	df_res=df.iloc[78*i:78*m]
